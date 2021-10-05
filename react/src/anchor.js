@@ -8,6 +8,7 @@ const Anchor = ({
   fetchCaptcha,
   submitResponse,
   verified,
+  style
 }) => {
   const [open, setOpen] = useState(false);
   const handleClose = () => { setOpen(false); };
@@ -30,14 +31,16 @@ const Anchor = ({
           type="button"
           className={`scaptcha-anchor-checkbox ${!verified && 'scaptcha-anchor-checkbox-default'} scaptcha-anchor-element`}
           onKeyUp={handleKey}
+          style={style}
         >
-          {verified && (
+          {/* {verified && (
             <SuccessIcon />
-          )}
-        </button>
-        <div className="scaptcha-anchor-label scaptcha-anchor-element">
+          )} */}
           {text.anchor}
-        </div>
+        </button>
+        {/* <div className="scaptcha-anchor-label scaptcha-anchor-element">
+          {text.anchor}
+        </div> */}
       </div>
       {!verified && open && (
         <div>
@@ -61,6 +64,12 @@ Anchor.propTypes = {
     challenge: PropTypes.string,
   }).isRequired,
   verified: PropTypes.bool.isRequired,
+  style: PropTypes.shape({
+    background: PropTypes.string,
+    width: PropTypes.string,
+    height: PropTypes.string,
+    border: PropTypes.string,
+  }),
 };
 
 export default Anchor;

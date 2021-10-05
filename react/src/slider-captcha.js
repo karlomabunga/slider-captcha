@@ -34,6 +34,7 @@ const SliderCaptcha = ({
   verify,
   variant,
   text,
+  style,
 }) => {
   const [verified, setVerified] = useState(false);
   const submitResponse = (response, trail) =>
@@ -63,6 +64,7 @@ const SliderCaptcha = ({
         fetchCaptcha={fetchCaptcha(create)}
         submitResponse={submitResponse}
         verified={verified}
+        style={style}
       />
     </div>
   );
@@ -76,6 +78,12 @@ SliderCaptcha.propTypes = {
   text: PropTypes.shape({
     anchor: PropTypes.string,
     challenge: PropTypes.string,
+  }),
+  style: PropTypes.shape({
+    background: PropTypes.string,
+    width: PropTypes.string,
+    height: PropTypes.string,
+    border: PropTypes.string,
   }),
 };
 
