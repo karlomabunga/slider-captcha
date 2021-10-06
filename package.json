@@ -12,7 +12,7 @@
     "fix": "eslint --fix ./",
     "sass": "sass --no-source-map src",
     "scripts": "node scripts/themes",
-    "babel": "babel src --out-dir lib --copy-files",
+    "babel": "babel src --out-dir lib",
     "build": "npm run sass && npm run scripts && npm run babel"
   },
   "repository": {
