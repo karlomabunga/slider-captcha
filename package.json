@@ -13,7 +13,8 @@
     "sass": "sass --no-source-map src",
     "scripts": "node scripts/themes",
     "babel": "npx babel src --out-dir lib",
-    "build": "npm run babel"
+    "build": "npm run sass && npm run scripts && npm run babel",
+    "postinstall": "npx babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
