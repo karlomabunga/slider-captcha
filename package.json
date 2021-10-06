@@ -1,5 +1,5 @@
 {
-  "name": "@slider-captcha/core",
+  "name": "slider-captcha",
   "version": "1.0.0",
   "description": "User-friendly puzzle slider captcha for React and Express",
   "main": "index.js",
@@ -9,10 +9,11 @@
   ],
   "scripts": {
     "test": "jest",
-    "lint": "eslint ./",
     "fix": "eslint --fix ./",
-    "babel": "babel src -d ./lib --ignore '**/*.test.js'",
-    "build": "npm run lint && npm run babel"
+    "sass": "sass --no-source-map src",
+    "scripts": "node scripts/themes",
+    "babel": "babel src --out-dir lib --copy-files",
+    "build": "npm run sass && npm run scripts && npm run babel"
   },
   "repository": {
     "type": "git",
@@ -20,12 +21,11 @@
   },
   "keywords": [
     "react",
-    "slider",
     "captcha",
     "component",
+    "slider",
     "puzzle",
-    "slide",
-    "express"
+    "slide"
   ],
   "author": "adrsch",
   "license": "MIT",
@@ -34,9 +34,11 @@
   },
   "homepage": "https://github.com/adrsch/slider-captcha#readme",
   "dependencies": {
-    "prop-types": "^15.7.2",
-    "sharp": "^0.25.4",
-    "uid-safe": "^2.1.5"
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -49,6 +51,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.0.0",
-    "jest": "^26.4.2"
+    "jest": "^26.4.2",
+    "sass": "^1.26.10"
   }
 }
