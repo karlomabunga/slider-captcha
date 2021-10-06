@@ -32,7 +32,7 @@ const Anchor = ({
         <button
           suppressHydrationWarning
           type="button"
-          className={`scaptcha-anchor-checkbox ${!verified && 'scaptcha-anchor-checkbox-default'} scaptcha-anchor-element`}
+          className="scaptcha-anchor-checkbox scaptcha-anchor-checkbox-default scaptcha-anchor-element"
           onKeyUp={handleKey}
           style={style}
         >
