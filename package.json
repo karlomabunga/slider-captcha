@@ -12,9 +12,9 @@
     "fix": "eslint --fix ./",
     "sass": "sass --no-source-map src",
     "scripts": "node scripts/themes",
-    "babel": "babel src --out-dir lib",
+    "babel": "babel src -d ./lib",
     "build": "npm run sass && npm run scripts && npm run babel",
-    "postinstall": "babel src --out-dir lib"
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
