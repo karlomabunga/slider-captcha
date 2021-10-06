@@ -14,7 +14,7 @@
     "scripts": "node scripts/themes",
     "babel": "babel src -d ./lib",
     "build": "npm run sass && npm run scripts && npm run babel",
-    "postinstall": "postinstall-build build"
+    "prepare": "build"
   },
   "repository": {
     "type": "git",
