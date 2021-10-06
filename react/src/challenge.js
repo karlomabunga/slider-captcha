@@ -102,17 +102,19 @@ const Challenge = ({ text, captcha, completeCaptcha }) => {
         className="scaptcha-card-background scaptcha-card-element"
         style={{
           backgroundImage: `url('${imageDataUrl(captcha.background)}')`,
+          position: 'relative',
         }}
-      />
-      <div
-        className="scaptcha-card-slider-puzzle scaptcha-card-element"
-        style={{
-          backgroundImage: `url('${imageDataUrl(captcha.slider)}')`,
-          left: `${scaleSliderPosition(trail.x[trail.x.length - 1])}px`,
-        }}
-        onMouseDown={handleStart}
-        onTouchStart={handleStart}
-      />
+      >
+        <div
+          className="scaptcha-card-slider-puzzle scaptcha-card-element"
+          style={{
+            backgroundImage: `url('${imageDataUrl(captcha.slider)}')`,
+            left: `${scaleSliderPosition(trail.x[trail.x.length - 1])}px`,
+          }}
+          onMouseDown={handleStart}
+          onTouchStart={handleStart}
+        />
+      </div>
       <div className="scaptcha-card-slider-container scaptcha-card-element">
         <div className="scaptcha-card-slider-track scaptcha-card-element" />
         <div

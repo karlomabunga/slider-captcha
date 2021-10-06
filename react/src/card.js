@@ -36,7 +36,16 @@ const Card = ({ text, fetchCaptcha, submitResponse }) => {
   }, []);
 
   return (
-    <div className="scaptcha-card-container scaptcha-card-element">
+    <div
+      className="scaptcha-card-container scaptcha-card-element"
+      style={{
+        position: 'absolute',
+        left: '0',
+        width: '100%',
+        textAlign: '-webkit-center',
+        zIndex: '1',
+      }}
+    >
       {captcha ? (
         <Challenge
           key={key}
@@ -45,10 +54,13 @@ const Card = ({ text, fetchCaptcha, submitResponse }) => {
           completeCaptcha={completeCaptcha}
         />
       ) : (
-        <div className="scaptcha-card-loading scaptcha-card-element">
+        <div
+          className="scaptcha-card-loading scaptcha-card-element"
+          style={{ width: '100%', padding: '15px 15px 0px 15px' }}
+        >
           <LoadingIcon />
         </div>
-      )}
+        )}
     </div>
   );
 };

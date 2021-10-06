@@ -9,12 +9,11 @@
   ],
   "scripts": {
     "test": "jest",
-    "lint": "eslint ./",
     "fix": "eslint --fix ./",
     "sass": "sass --no-source-map src",
     "scripts": "node scripts/themes",
     "babel": "babel src -d ./lib --ignore '**/*.test.js'",
-    "build": "npm run lint && npm run sass && npm run scripts && npm run babel"
+    "build": "npm run sass && npm run scripts && npm run babel"
   },
   "repository": {
     "type": "git",

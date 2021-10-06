@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Card from './card';
-import { SuccessIcon } from './icons';
 
 const Anchor = ({
   text,
   fetchCaptcha,
   submitResponse,
+  openCaptcha,
   verified,
-  style
+  style,
 }) => {
   const [open, setOpen] = useState(false);
   const handleClose = () => { setOpen(false); };
-  const handleOpen = () => { setOpen(true); };
+  const handleOpen = () => {
+    setOpen(true);
+    openCaptcha();
+  };
   const handleKey = (e) => {
     if (e.code === 'Enter' || e.code === 'Space') {
       setOpen(true);
@@ -21,7 +24,7 @@ const Anchor = ({
     }
   };
   return (
-    <div>
+    <div style={{ display: 'flex', flex: '1', position: 'relative' }}>
       <div
         className="scaptcha-anchor-container scaptcha-anchor-element"
         onClick={handleOpen}
@@ -63,13 +66,10 @@ Anchor.propTypes = {
     anchor: PropTypes.string,
     challenge: PropTypes.string,
   }).isRequired,
+  openCaptcha: PropTypes.func.isRequired,
   verified: PropTypes.bool.isRequired,
-  style: PropTypes.shape({
-    background: PropTypes.string,
-    width: PropTypes.string,
-    height: PropTypes.string,
-    border: PropTypes.string,
-  }),
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.any.isRequired,
 };
 
 export default Anchor;

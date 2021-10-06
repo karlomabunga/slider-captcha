@@ -56,13 +56,18 @@ const SliderCaptcha = ({
           }
         });
     });
+
+    const openCaptcha = () => {
+      setVerified(false);
+    };
   return (
-    <div className="scaptcha-container">
+    <div className="scaptcha-container" style={{ display: 'flex', flex: '1' }}>
       <Theme variant={variant} />
       <Anchor
         text={text}
         fetchCaptcha={fetchCaptcha(create)}
         submitResponse={submitResponse}
+        openCaptcha={openCaptcha}
         verified={verified}
         style={style}
       />
@@ -79,12 +84,8 @@ SliderCaptcha.propTypes = {
     anchor: PropTypes.string,
     challenge: PropTypes.string,
   }),
-  style: PropTypes.shape({
-    background: PropTypes.string,
-    width: PropTypes.string,
-    height: PropTypes.string,
-    border: PropTypes.string,
-  }),
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.any.isRequired,
 };
 
 SliderCaptcha.defaultProps = {
