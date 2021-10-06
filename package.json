@@ -36,13 +36,7 @@
   "homepage": "https://github.com/adrsch/slider-captcha#readme",
   "dependencies": {
     "postinstall-build": "^5.0.3",
-    "prop-types": "^15.7.2"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
-  },
-  "devDependencies": {
+    "prop-types": "^15.7.2",
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
@@ -55,5 +49,9 @@
     "eslint-plugin-react-hooks": "^4.0.0",
     "jest": "^26.4.2",
     "sass": "^1.26.10"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   }
 }
