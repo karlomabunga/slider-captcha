@@ -14,7 +14,7 @@
     "scripts": "node scripts/themes",
     "babel": "babel src -d ./lib",
     "build": "npm run sass && npm run scripts && npm run babel",
-    "prepare": "npm run build"
+    "postinstall": "postinstall-build build"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,7 @@
   },
   "homepage": "https://github.com/adrsch/slider-captcha#readme",
   "dependencies": {
+    "postinstall-build": "^5.0.3",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
