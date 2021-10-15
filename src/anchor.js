@@ -19,6 +19,7 @@ const Anchor = ({
   const handleKey = (e) => {
     if (e.code === 'Enter' || e.code === 'Space') {
       setOpen(true);
+      openCaptcha();
     } else if (e.key === 'Escape') {
       setOpen(false);
     }
