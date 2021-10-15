@@ -29,12 +29,12 @@ const Anchor = ({
       <div
         className="scaptcha-anchor-container scaptcha-anchor-element"
         onClick={handleOpen}
-        onKeyUp={handleKey}
       >
         <button
           suppressHydrationWarning
           type="button"
           className="scaptcha-anchor-checkbox scaptcha-anchor-checkbox-default scaptcha-anchor-element"
+          onKeyUp={handleKey}
           style={style}
         >
           {/* {verified && (
